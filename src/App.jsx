@@ -31,6 +31,270 @@ import {
 } from 'lucide-react';
 
 // ============================================================================
+// DICIONÁRIO COMPLETO DE CONJUGAÇÕES EM PORTUGUÊS DO BRASIL (PT-BR FALADO)
+// Garante que nenhuma frase fique no infinitivo ("Eu não estudar" -> "Eu não estudo")
+// ============================================================================
+const PT_CONJUGATIONS = {
+  study: {
+    ptInf: 'estudar',
+    ptPres1s: 'estudo',
+    ptPres2s: 'estuda',
+    ptPast1s: 'estudei',
+    ptPast2s: 'estudou',
+    ptFut1s: 'vou estudar',
+    ptFut2s: 'vai estudar'
+  },
+  help: {
+    ptInf: 'ajudar',
+    ptPres1s: 'ajudo',
+    ptPres2s: 'ajuda',
+    ptPast1s: 'ajudei',
+    ptPast2s: 'ajudou',
+    ptFut1s: 'vou ajudar',
+    ptFut2s: 'vai ajudar'
+  },
+  work: {
+    ptInf: 'trabalhar',
+    ptPres1s: 'trabalho',
+    ptPres2s: 'trabalha',
+    ptPast1s: 'trabalhei',
+    ptPast2s: 'trabalhou',
+    ptFut1s: 'vou trabalhar',
+    ptFut2s: 'vai trabalhar'
+  },
+  play: {
+    ptInf: 'jogar',
+    ptPres1s: 'jogo',
+    ptPres2s: 'joga',
+    ptPast1s: 'joguei',
+    ptPast2s: 'jogou',
+    ptFut1s: 'vou jogar',
+    ptFut2s: 'vai jogar'
+  },
+  travel: {
+    ptInf: 'viajar',
+    ptPres1s: 'viajo',
+    ptPres2s: 'viaja',
+    ptPast1s: 'viajei',
+    ptPast2s: 'viajou',
+    ptFut1s: 'vou viajar',
+    ptFut2s: 'vai viajar'
+  },
+  cook: {
+    ptInf: 'cozinhar',
+    ptPres1s: 'cozinho',
+    ptPres2s: 'cozinha',
+    ptPast1s: 'cozinhei',
+    ptPast2s: 'cozinhou',
+    ptFut1s: 'vou cozinhar',
+    ptFut2s: 'vai cozinhar'
+  },
+  like: {
+    ptInf: 'gostar',
+    ptPres1s: 'gosto',
+    ptPres2s: 'gosta',
+    ptPast1s: 'gostei',
+    ptPast2s: 'gostou',
+    ptFut1s: 'vou gostar',
+    ptFut2s: 'vai gostar'
+  },
+  need: {
+    ptInf: 'precisar',
+    ptPres1s: 'preciso',
+    ptPres2s: 'precisa',
+    ptPast1s: 'precisei',
+    ptPast2s: 'precisou',
+    ptFut1s: 'vou precisar',
+    ptFut2s: 'vai precisar'
+  },
+  want: {
+    ptInf: 'querer',
+    ptPres1s: 'quero',
+    ptPres2s: 'quer',
+    ptPast1s: 'quis',
+    ptPast2s: 'quis',
+    ptFut1s: 'vou querer',
+    ptFut2s: 'vai querer'
+  },
+  call: {
+    ptInf: 'ligar',
+    ptPres1s: 'ligo',
+    ptPres2s: 'liga',
+    ptPast1s: 'liguei',
+    ptPast2s: 'ligou',
+    ptFut1s: 'vou ligar',
+    ptFut2s: 'vai ligar'
+  },
+  listen: {
+    ptInf: 'escutar',
+    ptPres1s: 'escuto',
+    ptPres2s: 'escuta',
+    ptPast1s: 'escutei',
+    ptPast2s: 'escutou',
+    ptFut1s: 'vou escutar',
+    ptFut2s: 'vai escutar'
+  },
+  watch: {
+    ptInf: 'assistir',
+    ptPres1s: 'assisto',
+    ptPres2s: 'assiste',
+    ptPast1s: 'assisti',
+    ptPast2s: 'assistiu',
+    ptFut1s: 'vou assistir',
+    ptFut2s: 'vai assistir'
+  },
+  understand: {
+    ptInf: 'entender',
+    ptPres1s: 'entendo',
+    ptPres2s: 'entende',
+    ptPast1s: 'entendi',
+    ptPast2s: 'entendeu',
+    ptFut1s: 'vou entender',
+    ptFut2s: 'vai entender'
+  },
+  buy: {
+    ptInf: 'comprar',
+    ptPres1s: 'compro',
+    ptPres2s: 'compra',
+    ptPast1s: 'comprei',
+    ptPast2s: 'comprou',
+    ptFut1s: 'vou comprar',
+    ptFut2s: 'vai comprar'
+  },
+  speak: {
+    ptInf: 'falar',
+    ptPres1s: 'falo',
+    ptPres2s: 'fala',
+    ptPast1s: 'falei',
+    ptPast2s: 'falou',
+    ptFut1s: 'vou falar',
+    ptFut2s: 'vai falar'
+  },
+  make: {
+    ptInf: 'fazer',
+    ptPres1s: 'faço',
+    ptPres2s: 'faz',
+    ptPast1s: 'fiz',
+    ptPast2s: 'fez',
+    ptFut1s: 'vou fazer',
+    ptFut2s: 'vai fazer'
+  },
+  take: {
+    ptInf: 'levar',
+    ptPres1s: 'levo',
+    ptPres2s: 'leva',
+    ptPast1s: 'levei',
+    ptPast2s: 'levou',
+    ptFut1s: 'vou levar',
+    ptFut2s: 'vai levar'
+  },
+  meet: {
+    ptInf: 'encontrar',
+    ptPres1s: 'encontro',
+    ptPres2s: 'encontra',
+    ptPast1s: 'encontrei',
+    ptPast2s: 'encontrou',
+    ptFut1s: 'vou encontrar',
+    ptFut2s: 'vai encontrar'
+  },
+  choose: {
+    ptInf: 'escolher',
+    ptPres1s: 'escolho',
+    ptPres2s: 'escolhe',
+    ptPast1s: 'escolhi',
+    ptPast2s: 'escolheu',
+    ptFut1s: 'vou escolher',
+    ptFut2s: 'vai escolher'
+  },
+  bring: {
+    ptInf: 'trazer',
+    ptPres1s: 'trago',
+    ptPres2s: 'traz',
+    ptPast1s: 'trouxe',
+    ptPast2s: 'trouxe',
+    ptFut1s: 'vou trazer',
+    ptFut2s: 'vai trazer'
+  },
+  achieve: {
+    ptInf: 'alcançar',
+    ptPres1s: 'alcanço',
+    ptPres2s: 'alcança',
+    ptPast1s: 'alcancei',
+    ptPast2s: 'alcançou',
+    ptFut1s: 'vou alcançar',
+    ptFut2s: 'vai alcançar'
+  },
+  improve: {
+    ptInf: 'melhorar',
+    ptPres1s: 'melhoro',
+    ptPres2s: 'melhora',
+    ptPast1s: 'melhorei',
+    ptPast2s: 'melhorou',
+    ptFut1s: 'vou melhorar',
+    ptFut2s: 'vai melhorar'
+  },
+  manage: {
+    ptInf: 'gerenciar',
+    ptPres1s: 'gerencio',
+    ptPres2s: 'gerencia',
+    ptPast1s: 'gerenciei',
+    ptPast2s: 'gerenciou',
+    ptFut1s: 'vou gerenciar',
+    ptFut2s: 'vai gerenciar'
+  },
+  figure_out: {
+    ptInf: 'resolver',
+    ptPres1s: 'resolvo',
+    ptPres2s: 'resolve',
+    ptPast1s: 'resolvi',
+    ptPast2s: 'resolveu',
+    ptFut1s: 'vou resolver',
+    ptFut2s: 'vai resolver'
+  },
+  carry_out: {
+    ptInf: 'executar',
+    ptPres1s: 'executo',
+    ptPres2s: 'executa',
+    ptPast1s: 'executei',
+    ptPast2s: 'executou',
+    ptFut1s: 'vou executar',
+    ptFut2s: 'vai executar'
+  },
+  negotiate: {
+    ptInf: 'negociar',
+    ptPres1s: 'negocio',
+    ptPres2s: 'negocia',
+    ptPast1s: 'negociei',
+    ptPast2s: 'negociou',
+    ptFut1s: 'vou negociar',
+    ptFut2s: 'vai negociar'
+  },
+  deal_with: {
+    ptInf: 'lidar com isso',
+    ptPres1s: 'lido com isso',
+    ptPres2s: 'lida com isso',
+    ptPast1s: 'lidei com isso',
+    ptPast2s: 'lidou com isso',
+    ptFut1s: 'vou lidar com isso',
+    ptFut2s: 'vai lidar com isso'
+  }
+};
+
+function getVerbPt(verb) {
+  return (
+    PT_CONJUGATIONS[verb.id] || {
+      ptInf: verb.pt.toLowerCase(),
+      ptPres1s: verb.pt.toLowerCase(),
+      ptPres2s: verb.pt.toLowerCase(),
+      ptPast1s: verb.pt.toLowerCase(),
+      ptPast2s: verb.pt.toLowerCase(),
+      ptFut1s: `vou ${verb.pt.toLowerCase()}`,
+      ptFut2s: `vai ${verb.pt.toLowerCase()}`
+    }
+  );
+}
+
+// ============================================================================
 // CURRÍCULO COMPLETO: NÍVEL BÁSICO, INTERMEDIÁRIO E AVANÇADO
 // ============================================================================
 const CURRICULUM = [
@@ -559,112 +823,139 @@ function buildChallengeData(verb, roundIdx, previousVerbs = []) {
   const tpl = ROUND_TEMPLATES[roundIdx] || ROUND_TEMPLATES[0];
   const b = verb.base;
   const p = verb.past;
-  const pt = verb.pt.toLowerCase();
+  const conj = getVerbPt(verb);
 
   switch (tpl.key) {
     case 'presAff':
       return {
         ...tpl,
-        pt: `Eu costumo ${pt}`,
+        pt: `Eu ${conj.ptPres1s}`,
         en: `I ${b}`,
-        phonetic: `Ái ${b}`,
+        phonetic: verb.phonetics?.presAff || `Ái ${b}`,
         chips: ['I', b],
         distractors: [p, "don't", "didn't", 'will', 'you'],
-        rule: `Presente Afirmativo: Sujeito + Verbo normal ("I ${b}"). Sem segredo!`
+        rule: `Presente Afirmativo: Sujeito + Verbo normal ("I ${b}" = "Eu ${conj.ptPres1s}").`
       };
     case 'presNeg':
       return {
         ...tpl,
-        pt: `Eu não ${pt}`,
+        pt: `Eu não ${conj.ptPres1s}`,
         en: `I don't ${b}`,
-        phonetic: `Ái dôunt ${b}`,
+        phonetic: verb.phonetics?.presNeg || `Ái dôunt ${b}`,
         chips: ['I', "don't", b],
         distractors: ["didn't", "won't", p, 'not', 'Do'],
-        rule: `Presente Negativo no dia a dia: a gente usa "don't" antes do verbo ("I don't ${b}").`
+        rule: `Presente Negativo: para dizer "Eu não ${conj.ptPres1s}", usamos "don't" antes do verbo ("I don't ${b}").`
       };
     case 'presInt':
       return {
         ...tpl,
-        pt: `Você ${pt}?`,
+        pt: `Você ${conj.ptPres2s}?`,
         en: `Do you ${b}?`,
-        phonetic: `Dú iú ${b}?`,
+        phonetic: verb.phonetics?.presInt || `Dú iú ${b}?`,
         chips: ['Do', 'you', `${b}?`],
         distractors: ['Did', 'Will', p, 'Does', 'are'],
-        rule: `Pra fazer pergunta no presente: joga o "Do" no comecinho da frase + "you" ("Do you ${b}?").`
+        rule: `Pergunta no Presente: para perguntar "Você ${conj.ptPres2s}?", colocamos "Do" no início ("Do you ${b}?").`
       };
     case 'pastAff':
       return {
         ...tpl,
-        pt: `Eu ${pt === 'estudar' ? 'estudei' : pt === 'ajudar' ? 'ajudei' : pt === 'trabalhar' ? 'trabalhei' : pt === 'jogar / praticar' ? 'joguei' : pt === 'viajar' ? 'viajei' : pt === 'cozinhar' ? 'cozinhei' : pt === 'gostar' ? 'gostei' : pt === 'precisar' ? 'precisei' : pt === 'querer' ? 'quis' : pt === 'ligar / chamar' ? 'liguei' : pt === 'ouvir / escutar' ? 'ouvi' : pt === 'assistir' ? 'assisti' : `fiz (${pt})`} ontem`,
+        pt: `Eu ${conj.ptPast1s} ontem`,
         en: `I ${p} yesterday`,
-        phonetic: `Ái ${p} iésterdêi`,
+        phonetic: `${verb.phonetics?.pastAff || `Ái ${p}`} iésterdêi`,
         chips: ['I', p, 'yesterday'],
         distractors: [b, "didn't", 'tomorrow', 'was', 'will'],
-        rule: `Passado Afirmativo: coloca o verbo no passado + marcador ("I ${p} yesterday").`
+        rule: `Passado Afirmativo: verbo no passado ("I ${p} yesterday" = "Eu ${conj.ptPast1s} ontem").`
       };
     case 'pastNeg':
       return {
         ...tpl,
-        pt: `Eu não ${pt} ontem`,
+        pt: `Eu não ${conj.ptPast1s} ontem`,
         en: `I didn't ${b} yesterday`,
-        phonetic: `Ái dídent ${b} iésterdêi`,
+        phonetic: `${verb.phonetics?.pastNeg || `Ái dídent ${b}`} iésterdêi`,
         chips: ['I', "didn't", b, 'yesterday'],
         distractors: [p, "don't", "won't", 'tomorrow', 'did'],
-        rule: `Regra de ouro da conversa real: usou "didn't", o verbo volta pro modo normal ("I didn't ${b}").`
+        rule: `Passado Negativo ("Eu não ${conj.ptPast1s}"): usamos "didn't" e o verbo volta para a forma base ("I didn't ${b}").`
       };
     case 'pastInt':
       return {
         ...tpl,
-        pt: `Você ${pt} ontem?`,
+        pt: `Você ${conj.ptPast2s} ontem?`,
         en: `Did you ${b} yesterday?`,
-        phonetic: `Díd iú ${b} iésterdêi?`,
+        phonetic: `${verb.phonetics?.pastInt || `Díd iú ${b}`} iésterdêi?`,
         chips: ['Did', 'you', b, 'yesterday?'],
         distractors: ['Do', p, 'Will', 'tomorrow?', 'was'],
-        rule: `Pergunta no Passado: começa com "Did" e mantém o verbo normal, sem mudar nada ("Did you ${b}...?").`
+        rule: `Pergunta no Passado ("Você ${conj.ptPast2s} ontem?"): começamos com "Did" e mantemos o verbo normal ("Did you ${b}...?").`
       };
     case 'futAff':
       return {
         ...tpl,
-        pt: `Eu vou ${pt} amanhã`,
+        pt: `Eu ${conj.ptFut1s} amanhã`,
         en: `I'll ${b} tomorrow`,
-        phonetic: `Áil ${b} tchumórou`,
+        phonetic: `${verb.phonetics?.futAff || `Áil ${b}`} tchumórou`,
         chips: ["I'll", b, 'tomorrow'],
         distractors: [p, "won't", 'yesterday', 'did', 'to'],
-        rule: `Futuro falado no dia a dia: usa a contração rápida "I'll" + verbo normal + "tomorrow".`
+        rule: `Futuro Afirmativo ("Eu ${conj.ptFut1s}"): usamos a contração "I'll" + verbo normal ("I'll ${b} tomorrow").`
       };
     case 'futNeg':
       return {
         ...tpl,
-        pt: `Eu não vou ${pt} amanhã`,
+        pt: `Eu não ${conj.ptFut1s} amanhã`,
         en: `I won't ${b} tomorrow`,
-        phonetic: `Ái uôunt ${b} tchumórou`,
+        phonetic: `${verb.phonetics?.futNeg || `Ái uôunt ${b}`} tchumórou`,
         chips: ['I', "won't", b, 'tomorrow'],
         distractors: ["didn't", "don't", p, 'not', 'will'],
-        rule: `Pra negar no futuro: usamos o "won't" antes do verbo ("I won't ${b}...").`
+        rule: `Futuro Negativo ("Eu não ${conj.ptFut1s}"): usamos "won't" antes do verbo ("I won't ${b} tomorrow").`
       };
     case 'futInt':
       return {
         ...tpl,
-        pt: `Você vai ${pt} amanhã?`,
+        pt: `Você ${conj.ptFut2s} amanhã?`,
         en: `Will you ${b} tomorrow?`,
-        phonetic: `Uíl iú ${b} tchumórou?`,
+        phonetic: `${verb.phonetics?.futInt || `Uíl iú ${b}`} tchumórou?`,
         chips: ['Will', 'you', b, 'tomorrow?'],
         distractors: ['Do', 'Did', p, 'yesterday?', 'Are'],
-        rule: `Pergunta no Futuro: coloca o "Will" logo no início + "you" + o verbo normal.`
+        rule: `Pergunta no Futuro ("Você ${conj.ptFut2s} amanhã?"): colocamos "Will" no início + "you" + verbo normal.`
       };
     case 'spiral':
     default: {
       // Pega um verbo estudado anteriormente para costurar com conjunção variada
-      const prev = previousVerbs.length > 0
-        ? previousVerbs[previousVerbs.length - 1]
-        : { base: 'work', past: 'worked', pt: 'trabalhar' };
+      const prev =
+        previousVerbs.length > 0
+          ? previousVerbs[previousVerbs.length - 1]
+          : { id: 'work', base: 'work', past: 'worked', pt: 'Trabalhar' };
 
-      // Alterna entre conjunções para variedade pedagógica com português do Brasil bem fluido
+      const prevConj = getVerbPt(prev);
+
+      // Alterna entre conjunções com conjugação 100% correta em Português do Brasil
       const conjCycle = [
-        { en: 'because', pt: 'porque', phraseEn: `I ${b} today because I didn't ${prev.base} yesterday`, phrasePt: `Eu ${pt} hoje porque não ${prev.pt.toLowerCase()} ontem`, chips: ['I', b, 'today', 'because', "I didn't", prev.base, 'yesterday'] },
-        { en: 'but', pt: 'mas', phraseEn: `I'll ${b} tomorrow but I didn't ${prev.base} today`, phrasePt: `Eu vou ${pt} amanhã, mas não ${prev.pt.toLowerCase()} hoje`, chips: ["I'll", b, 'tomorrow', 'but', "I didn't", prev.base, 'today'] },
-        { en: 'so', pt: 'por isso', phraseEn: `I ${p} today so I won't ${prev.base} tomorrow`, phrasePt: `Eu ${pt} hoje, por isso não vou ${prev.pt.toLowerCase()} amanhã`, chips: ['I', p, 'today', 'so', "I won't", prev.base, 'tomorrow'] },
-        { en: 'when', pt: 'quando', phraseEn: `I always ${b} when you ${prev.base}`, phrasePt: `Eu sempre costumo ${pt} quando você ${prev.pt.toLowerCase()}`, chips: ['I', 'always', b, 'when', 'you', prev.base] }
+        {
+          en: 'because',
+          pt: 'porque',
+          phraseEn: `I ${b} today because I didn't ${prev.base} yesterday`,
+          phrasePt: `Eu ${conj.ptPres1s} hoje porque eu não ${prevConj.ptPast1s} ontem`,
+          chips: ['I', b, 'today', 'because', "I didn't", prev.base, 'yesterday']
+        },
+        {
+          en: 'but',
+          pt: 'mas',
+          phraseEn: `I'll ${b} tomorrow but I didn't ${prev.base} today`,
+          phrasePt: `Eu ${conj.ptFut1s} amanhã, mas eu não ${prevConj.ptPast1s} hoje`,
+          chips: ["I'll", b, 'tomorrow', 'but', "I didn't", prev.base, 'today']
+        },
+        {
+          en: 'so',
+          pt: 'por isso',
+          phraseEn: `I ${p} today so I won't ${prev.base} tomorrow`,
+          phrasePt: `Eu ${conj.ptPast1s} hoje, por isso eu não ${prevConj.ptFut1s} amanhã`,
+          chips: ['I', p, 'today', 'so', "I won't", prev.base, 'tomorrow']
+        },
+        {
+          en: 'when',
+          pt: 'quando',
+          phraseEn: `I always ${b} when you ${prev.base}`,
+          phrasePt: `Eu sempre ${conj.ptPres1s} quando você ${prevConj.ptPres2s}`,
+          chips: ['I', 'always', b, 'when', 'you', prev.base]
+        }
       ];
 
       const selectedConj = conjCycle[verb.base.length % conjCycle.length];
@@ -673,10 +964,10 @@ function buildChallengeData(verb, roundIdx, previousVerbs = []) {
         ...tpl,
         pt: selectedConj.phrasePt,
         en: selectedConj.phraseEn,
-        phonetic: `Ái ${b} ... [Costura Espiral]`,
+        phonetic: `${verb.phonetics?.presAff || `Ái ${b}`} ... [Costura Espiral]`,
         chips: selectedConj.chips,
         distractors: [p, prev.past, 'although', 'while', "that's why", "don't", 'Did'],
-        rule: `Costura Espiral: a gente junta o verbo de hoje ("${b}") com uma conjunção ("${selectedConj.en}") e puxa o verbo que você já estudou ("${prev.base}") pra não esquecer nada!`
+        rule: `Costura Espiral: conectamos o verbo de hoje ("${b}") com a conjunção "${selectedConj.en}" (${selectedConj.pt}) e revisamos o verbo "${prev.base}"!`
       };
     }
   }
@@ -714,11 +1005,13 @@ function playTone(type = 'success') {
 }
 
 export default function App() {
-  // PERSISTÊNCIA: Carrega dados do aluno
+  // PERSISTÊNCIA: Carrega dados do aluno (com migração automática para InglesGoNow)
   const [persistedProgress, setPersistedProgress] = useState(() => {
     try {
-      const saved = localStorage.getItem('ingles500h_progress_v2');
-      if (saved) return JSON.parse(saved);
+      const savedNew = localStorage.getItem('inglesgonow_progress_v1');
+      if (savedNew) return JSON.parse(savedNew);
+      const savedOld = localStorage.getItem('ingles500h_progress_v2');
+      if (savedOld) return JSON.parse(savedOld);
     } catch (e) {
       // Local storage not available
     }
@@ -736,7 +1029,7 @@ export default function App() {
         { date: 'Hoje', minutes: 0, verbsCount: 0 }
       ],
       historyLog: [
-        { date: 'Hoje', action: 'Iniciou a Fase 1 da jornada de 500 Horas' }
+        { date: 'Hoje', action: 'Iniciou a Fase 1 no InglesGoNow' }
       ]
     };
   });
@@ -787,7 +1080,7 @@ export default function App() {
           };
 
           try {
-            localStorage.setItem('ingles500h_progress_v2', JSON.stringify(updated));
+            localStorage.setItem('inglesgonow_progress_v1', JSON.stringify(updated));
           } catch (e) {}
 
           return updated;
@@ -812,6 +1105,7 @@ export default function App() {
   const [matrixVerbId, setMatrixVerbId] = useState(currentVerb.id);
   const [matrixMarkerId, setMatrixMarkerId] = useState('none');
   const activeMatrixVerb = currentLevel.verbs.find((v) => v.id === matrixVerbId) || currentVerb;
+  const activeMatrixConj = getVerbPt(activeMatrixVerb);
   const activeMatrixMarker = TIME_MARKERS.find((m) => m.id === matrixMarkerId) || TIME_MARKERS[0];
 
   // Verbos previamente estudados para alimentar a 'Costura Espiral'
@@ -849,7 +1143,7 @@ export default function App() {
     setPersistedProgress((prev) => {
       const updated = { ...prev, ...newValues };
       try {
-        localStorage.setItem('ingles500h_progress_v2', JSON.stringify(updated));
+        localStorage.setItem('inglesgonow_progress_v1', JSON.stringify(updated));
       } catch (e) {}
       return updated;
     });
@@ -1099,7 +1393,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#F8FAFC] text-slate-800 flex flex-col font-sans antialiased selection:bg-sky-100">
       {/* ======================================================================
-          BARRA SUPERIOR MINIMALISTA: NÍVEL, PROGRESSO DE 500H E HISTÓRICO
+          BARRA SUPERIOR MINIMALISTA: NÍVEL, PROGRESSO E HISTÓRICO
          ====================================================================== */}
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-xs border-b border-slate-200 px-4 py-3 shadow-2xs">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
@@ -1110,7 +1404,7 @@ export default function App() {
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-black text-slate-900 tracking-tight text-base sm:text-lg">
-                  Inglês 500 Horas
+                  InglesGoNow
                 </span>
                 <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-sky-50 text-sky-700 border border-sky-200">
                   {currentLevel.levelName.split(':')[0]}
@@ -1404,7 +1698,7 @@ export default function App() {
                 {/* (+) Afirmativa */}
                 <div
                   onClick={() => speakText(`I ${activeMatrixVerb.past}`)}
-                  className="bg-white p-3 rounded-xl border border-amber-200/90 shadow-2xs hover:border-amber-400 cursor-pointer transition-all flex flex-col justify-between min-h-[76px]"
+                  className="bg-white p-3 rounded-xl border border-amber-200/90 shadow-2xs hover:border-amber-400 cursor-pointer transition-all flex flex-col justify-between min-h-[88px]"
                 >
                   <div className="text-[11px] font-bold text-emerald-700 uppercase flex items-center justify-between">
                     <span>(+) Afirmativa</span>
@@ -1413,7 +1707,10 @@ export default function App() {
                   <div className="text-sm font-black text-slate-900 mt-1">
                     I {activeMatrixVerb.past}
                   </div>
-                  <div className="text-[11px] font-mono text-amber-800">
+                  <div className="text-xs font-medium text-slate-600">
+                    Eu {activeMatrixConj.ptPast1s}
+                  </div>
+                  <div className="text-[11px] font-mono text-amber-800 mt-0.5">
                     [{activeMatrixVerb.phonetics?.pastAff || ''}]
                   </div>
                 </div>
@@ -1421,7 +1718,7 @@ export default function App() {
                 {/* (-) Negativa */}
                 <div
                   onClick={() => speakText(`I didn't ${activeMatrixVerb.base}`)}
-                  className="bg-white p-3 rounded-xl border border-amber-200/90 shadow-2xs hover:border-amber-400 cursor-pointer transition-all flex flex-col justify-between min-h-[76px]"
+                  className="bg-white p-3 rounded-xl border border-amber-200/90 shadow-2xs hover:border-amber-400 cursor-pointer transition-all flex flex-col justify-between min-h-[88px]"
                 >
                   <div className="text-[11px] font-bold text-rose-700 uppercase flex items-center justify-between">
                     <span>(-) Negativa</span>
@@ -1430,7 +1727,10 @@ export default function App() {
                   <div className="text-sm font-black text-slate-900 mt-1">
                     I didn't {activeMatrixVerb.base}
                   </div>
-                  <div className="text-[11px] font-mono text-amber-800">
+                  <div className="text-xs font-medium text-slate-600">
+                    Eu não {activeMatrixConj.ptPast1s}
+                  </div>
+                  <div className="text-[11px] font-mono text-amber-800 mt-0.5">
                     [{activeMatrixVerb.phonetics?.pastNeg || ''}]
                   </div>
                 </div>
@@ -1438,7 +1738,7 @@ export default function App() {
                 {/* (?) Interrogativa */}
                 <div
                   onClick={() => speakText(`Did you ${activeMatrixVerb.base}?`)}
-                  className="bg-white p-3 rounded-xl border border-amber-200/90 shadow-2xs hover:border-amber-400 cursor-pointer transition-all flex flex-col justify-between min-h-[76px]"
+                  className="bg-white p-3 rounded-xl border border-amber-200/90 shadow-2xs hover:border-amber-400 cursor-pointer transition-all flex flex-col justify-between min-h-[88px]"
                 >
                   <div className="text-[11px] font-bold text-sky-700 uppercase flex items-center justify-between">
                     <span>(?) Pergunta</span>
@@ -1447,7 +1747,10 @@ export default function App() {
                   <div className="text-sm font-black text-slate-900 mt-1">
                     Did you {activeMatrixVerb.base}?
                   </div>
-                  <div className="text-[11px] font-mono text-amber-800">
+                  <div className="text-xs font-medium text-slate-600">
+                    Você {activeMatrixConj.ptPast2s}?
+                  </div>
+                  <div className="text-[11px] font-mono text-amber-800 mt-0.5">
                     [{activeMatrixVerb.phonetics?.pastInt || ''}]
                   </div>
                 </div>
@@ -1465,7 +1768,7 @@ export default function App() {
                 {/* (+) Afirmativa */}
                 <div
                   onClick={() => speakText(`I ${activeMatrixVerb.base}`)}
-                  className="bg-white p-3 rounded-xl border border-sky-200/90 shadow-2xs hover:border-sky-400 cursor-pointer transition-all flex flex-col justify-between min-h-[76px]"
+                  className="bg-white p-3 rounded-xl border border-sky-200/90 shadow-2xs hover:border-sky-400 cursor-pointer transition-all flex flex-col justify-between min-h-[88px]"
                 >
                   <div className="text-[11px] font-bold text-emerald-700 uppercase flex items-center justify-between">
                     <span>(+) Afirmativa</span>
@@ -1474,7 +1777,10 @@ export default function App() {
                   <div className="text-sm font-black text-slate-900 mt-1">
                     I {activeMatrixVerb.base}
                   </div>
-                  <div className="text-[11px] font-mono text-sky-800">
+                  <div className="text-xs font-medium text-slate-600">
+                    Eu {activeMatrixConj.ptPres1s}
+                  </div>
+                  <div className="text-[11px] font-mono text-sky-800 mt-0.5">
                     [{activeMatrixVerb.phonetics?.presAff || ''}]
                   </div>
                 </div>
@@ -1482,7 +1788,7 @@ export default function App() {
                 {/* (-) Negativa */}
                 <div
                   onClick={() => speakText(`I don't ${activeMatrixVerb.base}`)}
-                  className="bg-white p-3 rounded-xl border border-sky-200/90 shadow-2xs hover:border-sky-400 cursor-pointer transition-all flex flex-col justify-between min-h-[76px]"
+                  className="bg-white p-3 rounded-xl border border-sky-200/90 shadow-2xs hover:border-sky-400 cursor-pointer transition-all flex flex-col justify-between min-h-[88px]"
                 >
                   <div className="text-[11px] font-bold text-rose-700 uppercase flex items-center justify-between">
                     <span>(-) Negativa</span>
@@ -1491,7 +1797,10 @@ export default function App() {
                   <div className="text-sm font-black text-slate-900 mt-1">
                     I don't {activeMatrixVerb.base}
                   </div>
-                  <div className="text-[11px] font-mono text-sky-800">
+                  <div className="text-xs font-medium text-slate-600">
+                    Eu não {activeMatrixConj.ptPres1s}
+                  </div>
+                  <div className="text-[11px] font-mono text-sky-800 mt-0.5">
                     [{activeMatrixVerb.phonetics?.presNeg || ''}]
                   </div>
                 </div>
@@ -1499,7 +1808,7 @@ export default function App() {
                 {/* (?) Interrogativa */}
                 <div
                   onClick={() => speakText(`Do you ${activeMatrixVerb.base}?`)}
-                  className="bg-white p-3 rounded-xl border border-sky-200/90 shadow-2xs hover:border-sky-400 cursor-pointer transition-all flex flex-col justify-between min-h-[76px]"
+                  className="bg-white p-3 rounded-xl border border-sky-200/90 shadow-2xs hover:border-sky-400 cursor-pointer transition-all flex flex-col justify-between min-h-[88px]"
                 >
                   <div className="text-[11px] font-bold text-sky-700 uppercase flex items-center justify-between">
                     <span>(?) Pergunta</span>
@@ -1508,7 +1817,10 @@ export default function App() {
                   <div className="text-sm font-black text-slate-900 mt-1">
                     Do you {activeMatrixVerb.base}?
                   </div>
-                  <div className="text-[11px] font-mono text-sky-800">
+                  <div className="text-xs font-medium text-slate-600">
+                    Você {activeMatrixConj.ptPres2s}?
+                  </div>
+                  <div className="text-[11px] font-mono text-sky-800 mt-0.5">
                     [{activeMatrixVerb.phonetics?.presInt || ''}]
                   </div>
                 </div>
@@ -1526,7 +1838,7 @@ export default function App() {
                 {/* (+) Afirmativa */}
                 <div
                   onClick={() => speakText(`I'll ${activeMatrixVerb.base}`)}
-                  className="bg-white p-3 rounded-xl border border-emerald-200/90 shadow-2xs hover:border-emerald-400 cursor-pointer transition-all flex flex-col justify-between min-h-[76px]"
+                  className="bg-white p-3 rounded-xl border border-emerald-200/90 shadow-2xs hover:border-emerald-400 cursor-pointer transition-all flex flex-col justify-between min-h-[88px]"
                 >
                   <div className="text-[11px] font-bold text-emerald-700 uppercase flex items-center justify-between">
                     <span>(+) Afirmativa</span>
@@ -1535,7 +1847,10 @@ export default function App() {
                   <div className="text-sm font-black text-slate-900 mt-1">
                     I'll {activeMatrixVerb.base}
                   </div>
-                  <div className="text-[11px] font-mono text-emerald-800">
+                  <div className="text-xs font-medium text-slate-600">
+                    Eu {activeMatrixConj.ptFut1s}
+                  </div>
+                  <div className="text-[11px] font-mono text-emerald-800 mt-0.5">
                     [{activeMatrixVerb.phonetics?.futAff || ''}]
                   </div>
                 </div>
@@ -1543,7 +1858,7 @@ export default function App() {
                 {/* (-) Negativa */}
                 <div
                   onClick={() => speakText(`I won't ${activeMatrixVerb.base}`)}
-                  className="bg-white p-3 rounded-xl border border-emerald-200/90 shadow-2xs hover:border-emerald-400 cursor-pointer transition-all flex flex-col justify-between min-h-[76px]"
+                  className="bg-white p-3 rounded-xl border border-emerald-200/90 shadow-2xs hover:border-emerald-400 cursor-pointer transition-all flex flex-col justify-between min-h-[88px]"
                 >
                   <div className="text-[11px] font-bold text-rose-700 uppercase flex items-center justify-between">
                     <span>(-) Negativa</span>
@@ -1552,7 +1867,10 @@ export default function App() {
                   <div className="text-sm font-black text-slate-900 mt-1">
                     I won't {activeMatrixVerb.base}
                   </div>
-                  <div className="text-[11px] font-mono text-emerald-800">
+                  <div className="text-xs font-medium text-slate-600">
+                    Eu não {activeMatrixConj.ptFut1s}
+                  </div>
+                  <div className="text-[11px] font-mono text-emerald-800 mt-0.5">
                     [{activeMatrixVerb.phonetics?.futNeg || ''}]
                   </div>
                 </div>
@@ -1560,7 +1878,7 @@ export default function App() {
                 {/* (?) Interrogativa */}
                 <div
                   onClick={() => speakText(`Will you ${activeMatrixVerb.base}?`)}
-                  className="bg-white p-3 rounded-xl border border-emerald-200/90 shadow-2xs hover:border-emerald-400 cursor-pointer transition-all flex flex-col justify-between min-h-[76px]"
+                  className="bg-white p-3 rounded-xl border border-emerald-200/90 shadow-2xs hover:border-emerald-400 cursor-pointer transition-all flex flex-col justify-between min-h-[88px]"
                 >
                   <div className="text-[11px] font-bold text-sky-700 uppercase flex items-center justify-between">
                     <span>(?) Pergunta</span>
@@ -1569,7 +1887,10 @@ export default function App() {
                   <div className="text-sm font-black text-slate-900 mt-1">
                     Will you {activeMatrixVerb.base}?
                   </div>
-                  <div className="text-[11px] font-mono text-emerald-800">
+                  <div className="text-xs font-medium text-slate-600">
+                    Você {activeMatrixConj.ptFut2s}?
+                  </div>
+                  <div className="text-[11px] font-mono text-emerald-800 mt-0.5">
                     [{activeMatrixVerb.phonetics?.futInt || ''}]
                   </div>
                 </div>
@@ -1612,9 +1933,9 @@ export default function App() {
         <main className="lg:col-span-5 space-y-4">
           {/* CABEÇALHO DA RODADA ATUAL */}
           <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-2xs space-y-3">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap items-center justify-between gap-2">
               <span className="text-xs font-black text-slate-400 uppercase tracking-wider">
-                Verbo {activeVerbIndex + 1} de {currentLevel.verbs.length} • Passo {activeRoundIndex + 1} de 10
+                VERBO {activeVerbIndex + 1} DE {currentLevel.verbs.length} • PASSO {activeRoundIndex + 1} DE 10
               </span>
               <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full border bg-sky-50 text-sky-800 border-sky-200">
                 {challenge.tense} • {challenge.form}
